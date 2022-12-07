@@ -1,0 +1,79 @@
+html,body {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-image: url(assets/pozadina3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    overflow: hidden; /*ovim si izbegao da ti se pokazuje belo na malim ekranima*/
+}
+
+.satovi {
+    padding: 50px;
+    background:none;
+    text-align: center;
+    font-size: 20px;
+    color: #EFEFEF;
+    text-decoration: solid;
+    text-shadow: 3px 0px 7px rgba(81,67,21,0.8), 
+    -3px 0px 7px rgba(81,67,21,0.8), 
+    0px 4px 7px rgba(81,67,21,0.8);
+}
+
+.izgled-sata { 
+    position: relative;
+    background-image: url(assets/pozadina5.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    border: 0.3rem solid rgb(14, 15, 14);
+    border-radius: 50%;
+    text-align: center;
+    
+    /*ovo ne znam sta je*/
+    transform: translateY(-3px);
+
+    /* ovo sam prekopirao msm da je samo izgled ovo */
+        box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+}
+
+.kazaljka {
+    position: absolute;
+    height: 6px;
+    top: 50%;
+    right: 50%;
+    transform-origin: 100%;     /* ovo je odakle ce se okretati, kada je 100% onda je na x osi i onda se okrece skroze desno */
+    transform: rotate(90deg); /* po def. krece se od pozicije 9h/21h pa se ovo koristi da bi svaka kazaljka krenula od pozicije 00/12/24 */
+    transition: all 0.05s ease; /* ovde dodajes da tranzicija bude smooth da ne bude instant ali ni da ne cekas duze od sekunde da se kazaljka pomeri, nisam siguran sta ovo all znaci, 1. koje property se pozivas da se menja, 2. koliko dugo traje sama tranzicija, 3. nacin na koji se menja, polako brzo, brzo pa polako.. 4. koliki je delay  */
+    transition-timing-function: cubic-bezier(.4,2.08,.55,.44); /* podesavanje kako ce se animacija odvijati tokom vremena */
+    width: 50%;
+    background: rgb(222, 222, 213);
+  }
+
+.sat {
+    width: 30%;
+    /* margin-left: 20%; */
+    background: red;
+}
+
+.minut {
+    width: 45%;
+    /* margin-left: 5%; */
+    background: rgb(0, 68, 255);
+}
+
+.glitch{
+    transition: all 0s;
+}
